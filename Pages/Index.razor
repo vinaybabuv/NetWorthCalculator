@@ -23,7 +23,7 @@
                             <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" id="checkingAccounts" @bind="checkingAccounts" @onblur="UpdateTotalCash">
+                                    <input type="number" class="form-control" id="checkingAccounts" @bind="checkingAccounts" @onblur="UpdateTotalCash" min="0">
                                 </div>
                             </td>
                         </tr>
@@ -32,7 +32,7 @@
                             <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" id="savingsAccounts" @bind="savingsAccounts" @onblur="UpdateTotalCash">
+                                    <input type="number" class="form-control" id="savingsAccounts" @bind="savingsAccounts" @onblur="UpdateTotalCash" min="0">
                                 </div>
                             </td>
                         </tr>
@@ -41,7 +41,7 @@
                            <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" id="moneyMarketAccounts" @bind="moneyMarketAccounts" @onblur="UpdateTotalCash">
+                                    <input type="number" class="form-control" id="moneyMarketAccounts" @bind="moneyMarketAccounts" @onblur="UpdateTotalCash" min="0">
                                 </div>
                             </td>
                         </tr>
@@ -50,7 +50,7 @@
                             <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" id="savingsBonds" @bind="savingsBonds" @onblur="UpdateTotalCash">
+                                    <input type="number" class="form-control" id="savingsBonds" @bind="savingsBonds" @onblur="UpdateTotalCash" min="0">
                                 </div>
                             </td>
                         </tr>
@@ -59,7 +59,7 @@
                             <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" id="cds" @bind="cds" @onblur="UpdateTotalCash">
+                                    <input type="number" class="form-control" id="cds" @bind="cds" @onblur="UpdateTotalCash" min="0">
                                 </div>
                             </td>
                         </tr>
@@ -68,7 +68,7 @@
                             <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" id="other" @bind="other" @onblur="UpdateTotalCash">
+                                    <input type="number" class="form-control" id="other" @bind="other" @onblur="UpdateTotalCash" min="0">
                                 </div>
                             </td>
                         </tr>
@@ -77,7 +77,7 @@
                             <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <div>@totalCash</div>
+                                    <div class="form-control" readonly>@totalCash</div>
                                 </div>
                             </td>
                         </tr>
@@ -103,7 +103,7 @@
                             <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="creditCardBalances" @onblur="UpdateTotalLiabilities">
+                                    <input type="number" class="form-control" @bind="creditCardBalances" @onblur="UpdateTotalLiabilities" min="0">
                                 </div>
                             </td>
                         </tr>
@@ -112,7 +112,7 @@
                             <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="incomeTax" @onblur="UpdateTotalLiabilities">
+                                    <input type="number" class="form-control" @bind="incomeTax" @onblur="UpdateTotalLiabilities" min="0">
                                 </div>
                             </td>
                         </tr>
@@ -121,7 +121,7 @@
                             <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="otherBills" @onblur="UpdateTotalLiabilities">
+                                    <input type="number" class="form-control" @bind="otherBills" @onblur="UpdateTotalLiabilities" min="0">
                                 </div>
                             </td>
                         </tr>
@@ -133,7 +133,7 @@
                             <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="homeMortgage" @onblur="UpdateTotalLiabilities">
+                                    <input type="number" class="form-control" @bind="homeMortgage" @onblur="UpdateTotalLiabilities" min="0">
                                 </div>
                             </td>
                         </tr>
@@ -142,7 +142,7 @@
                             <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="homeEquityLoan" @onblur="UpdateTotalLiabilities">
+                                    <input type="number" class="form-control" @bind="homeEquityLoan" @onblur="UpdateTotalLiabilities"min="0">
                                 </div>
                             </td>
                         </tr>
@@ -151,7 +151,7 @@
                             <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="rentalProperty" @onblur="UpdateTotalLiabilities">
+                                    <input type="number" class="form-control" @bind="rentalProperty" @onblur="UpdateTotalLiabilities" min="0">
                                 </div>
                             </td>
                         </tr>
@@ -160,7 +160,7 @@
                             <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="carLoan" @onblur="UpdateTotalLiabilities">
+                                    <input type="number" class="form-control" @bind="carLoan" @onblur="UpdateTotalLiabilities" min="0">
                                 </div>
                             </td>
                         </tr>
@@ -169,7 +169,7 @@
                             <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="studentLoan" @onblur="UpdateTotalLiabilities">
+                                    <input type="number" class="form-control" @bind="studentLoan" @onblur="UpdateTotalLiabilities" min="0">
                                 </div>
                             </td>
                         </tr>
@@ -178,7 +178,7 @@
                             <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="lifeInsurance" @onblur="UpdateTotalLiabilities">
+                                    <input type="number" class="form-control" @bind="lifeInsurance" @onblur="UpdateTotalLiabilities" min="0">
                                 </div>
                             </td>
                         </tr>
@@ -187,7 +187,7 @@
                             <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="otherLongTermDebt" @onblur="UpdateTotalLiabilities">
+                                    <input type="number" class="form-control" @bind="otherLongTermDebt" @onblur="UpdateTotalLiabilities" min="0">
                                 </div>
                             </td>
                         </tr>
@@ -196,7 +196,18 @@
                             <td>
                                 <div class="input-group">
                                     <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <div>@TotalLiabilities</div>
+                                    <div class="form-control" readonly>@totalLiabilities</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-end"> 
+                                <button class="btn btn-primary" @onclick="ShowNetWorth">Calculate NetWorth</button>
+                                </td>
+                            <td>
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                                    <div class="form-control" readonly>@netWorth</div>
 
                                 </div>
                             </td>
@@ -232,8 +243,9 @@
     private double studentLoan { get; set; }
     private double lifeInsurance { get; set; }
     private double otherLongTermDebt { get; set; }
-    // ...
-    private double TotalLiabilities { get; set; }
+    // Total Liabilities
+    private double totalLiabilities { get; set; }
+    private double netWorth { get; set; }
  
     private void UpdateTotalCash()
     {
@@ -243,7 +255,11 @@
 
     private void UpdateTotalLiabilities()
     {
-        TotalLiabilities = creditCardBalances + incomeTax + otherBills + homeMortgage + homeEquityLoan + rentalProperty + carLoan + studentLoan + lifeInsurance + otherLongTermDebt;
+        totalLiabilities = creditCardBalances + incomeTax + otherBills + homeMortgage + homeEquityLoan + rentalProperty + carLoan + studentLoan + lifeInsurance + otherLongTermDebt;
+    }
+    private void ShowNetWorth()
+    {
+        netWorth = totalCash - totalLiabilities;
     }
 }
 

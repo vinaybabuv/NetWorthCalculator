@@ -1,2 +1,9 @@
 
 *.dll
+*.dll
+*.pdb
+*.json
+*.sentinel
+*.json
+*.pdb
+*.dll
