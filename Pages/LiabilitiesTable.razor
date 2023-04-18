@@ -1,0 +1,142 @@
+﻿<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Liabilities</th>
+            <th width="30%">Current amount due</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="table-secondary">
+            <th class="text-start" colspan="3">Current</th>
+        </tr>
+        <tr>
+            <td>Credit card balances</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <input type="number" class="form-control" @bind="creditCardBalances" @onblur="UpdateTotalLiabilities" min="0">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Estimated income tax owed</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <input type="number" class="form-control" @bind="incomeTax" @onblur="UpdateTotalLiabilities" min="0">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Other outstanding bills</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <input type="number" class="form-control" @bind="otherBills" @onblur="UpdateTotalLiabilities" min="0">
+                </div>
+            </td>
+        </tr>
+        <tr class="table-secondary">
+            <th class="text-start" colspan="3">Long-term</th>
+        </tr>
+        <tr>
+            <td>Home mortgage</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <input type="number" class="form-control" @bind="homeMortgage" @onblur="UpdateTotalLiabilities" min="0">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Home equity loan</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <input type="number" class="form-control" @bind="homeEquityLoan" @onblur="UpdateTotalLiabilities" min="0">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Mortgage on rental properties</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <input type="number" class="form-control" @bind="rentalProperty" @onblur="UpdateTotalLiabilities" min="0">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Car loans</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <input type="number" class="form-control" @bind="carLoan" @onblur="UpdateTotalLiabilities" min="0">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Student loans</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <input type="number" class="form-control" @bind="studentLoan" @onblur="UpdateTotalLiabilities" min="0">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Life insurance policy loans</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <input type="number" class="form-control" @bind="lifeInsurance" @onblur="UpdateTotalLiabilities" min="0">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Other loan-term debt</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <input type="number" class="form-control" @bind="otherLongTermDebt" @onblur="UpdateTotalLiabilities" min="0">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-end">Total liabilities</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <div class="form-control" readonly>@totalLiabilities</div>
+                </div>
+            </td>
+        </tr>
+       
+    </tbody>
+</table>
+
+@code {
+
+    // Liabilities
+    private double creditCardBalances { get; set; }
+    private double incomeTax { get; set; }
+    private double otherBills { get; set; }
+    private double homeMortgage { get; set; }
+    private double homeEquityLoan { get; set; }
+    private double rentalProperty { get; set; }
+    private double carLoan { get; set; }
+    private double studentLoan { get; set; }
+    private double lifeInsurance { get; set; }
+    private double otherLongTermDebt { get; set; }
+    // Total Liabilities
+    private double totalLiabilities { get; set; }
+    public double GetTotalLiabilities()
+    {
+        return totalLiabilities;
+    }
+
+    private void UpdateTotalLiabilities()
+    {
+        totalLiabilities = creditCardBalances + incomeTax + otherBills + homeMortgage + homeEquityLoan + rentalProperty + carLoan + studentLoan + lifeInsurance + otherLongTermDebt;
+    }
+}

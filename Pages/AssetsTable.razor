@@ -1,0 +1,100 @@
+﻿<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Assets</th>
+            <th width="30%">Current value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="table-secondary">
+            <th class="text-start" colspan="3">Cash and cash equivalents</th>
+        </tr>
+        <tr>
+            <td>Checking accounts</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <input type="number" class="form-control" id="checkingAccounts" @bind="checkingAccounts" @onblur="UpdateTotalCash" min="0">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Savings accounts</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <input type="number" class="form-control" id="savingsAccounts" @bind="savingsAccounts" @onblur="UpdateTotalCash" min="0">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Money market accounts</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <input type="number" class="form-control" id="moneyMarketAccounts" @bind="moneyMarketAccounts" @onblur="UpdateTotalCash" min="0">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Savings bonds</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <input type="number" class="form-control" id="savingsBonds" @bind="savingsBonds" @onblur="UpdateTotalCash" min="0">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>CD's</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <input type="number" class="form-control" id="cds" @bind="cds" @onblur="UpdateTotalCash" min="0">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Other</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <input type="number" class="form-control" id="other" @bind="other" @onblur="UpdateTotalCash" min="0">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-end">Total cash</td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                    <div class="form-control" readonly>@totalCash</div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+
+@code {
+    // Assets
+    private double checkingAccounts { get; set; }
+    private double savingsAccounts { get; set; }
+    private double moneyMarketAccounts { get; set; }
+    private double savingsBonds { get; set; }
+    private double cds { get; set; }
+    private double other { get; set; }
+    public double GetTotalCash()
+    {
+        return totalCash;
+    }
+
+    // total asserts
+    public double totalCash { get; set; }
+    private void UpdateTotalCash()
+    {
+        totalCash = checkingAccounts + savingsAccounts + moneyMarketAccounts + savingsBonds + cds + other;
+
+    }
+
+}

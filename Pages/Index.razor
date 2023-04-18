@@ -7,259 +7,46 @@
     <div class="container mt-3">
         <div class="row">
             <div class="col-md-12 border-top-0">
-                <table class="table table-hover table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Assets</th>
-                            <th width="30%">Current value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="table-secondary">
-                            <th class="text-start" colspan="3">Cash and cash equivalents</th>
-                        </tr>
-                        <tr>
-                            <td>Checking accounts</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" id="checkingAccounts" @bind="checkingAccounts" @onblur="UpdateTotalCash" min="0">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Savings accounts</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" id="savingsAccounts" @bind="savingsAccounts" @onblur="UpdateTotalCash" min="0">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Money market accounts</td>
-                           <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" id="moneyMarketAccounts" @bind="moneyMarketAccounts" @onblur="UpdateTotalCash" min="0">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Savings bonds</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" id="savingsBonds" @bind="savingsBonds" @onblur="UpdateTotalCash" min="0">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>CD's</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" id="cds" @bind="cds" @onblur="UpdateTotalCash" min="0">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Other</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" id="other" @bind="other" @onblur="UpdateTotalCash" min="0">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-end">Total cash</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <div class="form-control" readonly>@totalCash</div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                   
-                </table>
-            </div>
-            <div style="height: 20px;"></div>
-            <div class="col-md-12 border-top-0">
-                <table class="table table-hover table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Liabilities</th>
-                            <th width="30%">Current amount due</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class ="table-secondary">
-                            <th class="text-start" colspan="3">Current</th>
-                        </tr>
-                        <tr>
-                            <td>Credit card balances</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="creditCardBalances" @onblur="UpdateTotalLiabilities" min="0">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Estimated income tax owed</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="incomeTax" @onblur="UpdateTotalLiabilities" min="0">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Other outstanding bills</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="otherBills" @onblur="UpdateTotalLiabilities" min="0">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="table-secondary">
-                            <th class="text-start" colspan="3">Long-term</th>
-                        </tr>
-                        <tr>
-                            <td>Home mortgage</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="homeMortgage" @onblur="UpdateTotalLiabilities" min="0">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Home equity loan</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="homeEquityLoan" @onblur="UpdateTotalLiabilities"min="0">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Mortgage on rental properties</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="rentalProperty" @onblur="UpdateTotalLiabilities" min="0">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Car loans</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="carLoan" @onblur="UpdateTotalLiabilities" min="0">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Student loans</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="studentLoan" @onblur="UpdateTotalLiabilities" min="0">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Life insurance policy loans</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="lifeInsurance" @onblur="UpdateTotalLiabilities" min="0">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Other loan-term debt</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <input type="number" class="form-control" @bind="otherLongTermDebt" @onblur="UpdateTotalLiabilities" min="0">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-end">Total liabilities</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <div class="form-control" readonly>@totalLiabilities</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-end"> 
-                                <button class="btn btn-primary" @onclick="ShowNetWorth">Calculate NetWorth</button>
-                                </td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                                    <div class="form-control" readonly>@netWorth</div>
-
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <AssetsTable @ref="assetsTable" />
             </div>
         </div>
-      <hr>
+        <div style="height: 20px;"></div>
+            <div class="col-md-12 border-top-0">
+                <LiabilitiesTable @ref="liabilitiesTable" />
+                     <table class="table table-hover table-bordered">
+                         <tbody>
+
+                            <tr>
+                                 <td class="text-end">
+                                <button class="btn btn-primary" @onclick="ShowNetWorth">Calculate NetWorth</button>
+                                    </td>
+                            <td>
+                                <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                                 <div class="form-control" readonly>@netWorth</div>
+
+                                 </div>
+                            </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
      </div>
    
    </body>
 
 
 @code {
-    // Assets
-    private double checkingAccounts { get; set; }
-    private double savingsAccounts { get; set; }
-    private double moneyMarketAccounts { get; set; }
-    private double savingsBonds { get; set; }
-    private double cds { get; set; }
-    private double other { get; set; }
-    // total asserts
-    private double totalCash { get; set; }
-    // Liabilities
-    private double creditCardBalances { get; set; }
-    private double incomeTax { get; set; }
-    private double otherBills { get; set; }
-    private double homeMortgage { get; set; }
-    private double homeEquityLoan { get; set; }
-    private double rentalProperty { get; set; }
-    private double carLoan { get; set; }
-    private double studentLoan { get; set; }
-    private double lifeInsurance { get; set; }
-    private double otherLongTermDebt { get; set; }
-    // Total Liabilities
-    private double totalLiabilities { get; set; }
+
+    private AssetsTable assetsTable;
+    private LiabilitiesTable liabilitiesTable;
+
     private double netWorth { get; set; }
  
-    private void UpdateTotalCash()
-    {
-      totalCash = checkingAccounts + savingsAccounts + moneyMarketAccounts + savingsBonds + cds + other;
-     
-    }
-
-    private void UpdateTotalLiabilities()
-    {
-        totalLiabilities = creditCardBalances + incomeTax + otherBills + homeMortgage + homeEquityLoan + rentalProperty + carLoan + studentLoan + lifeInsurance + otherLongTermDebt;
-    }
+   
     private void ShowNetWorth()
     {
-        netWorth = totalCash - totalLiabilities;
+        netWorth = assetsTable.GetTotalCash() - liabilitiesTable.GetTotalLiabilities();
     }
 }
 

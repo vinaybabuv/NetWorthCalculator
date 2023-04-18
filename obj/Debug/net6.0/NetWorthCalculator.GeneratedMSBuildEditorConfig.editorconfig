@@ -19,8 +19,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/vinay/source/repos/NetWorthCalculator/NetWorthCalculator/Pages/AssetsTable.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXNzZXRzVGFibGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/vinay/source/repos/NetWorthCalculator/NetWorthCalculator/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vinay/source/repos/NetWorthCalculator/NetWorthCalculator/Pages/LiabilitiesTable.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlhYmlsaXRpZXNUYWJsZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/vinay/source/repos/NetWorthCalculator/NetWorthCalculator/Shared/SurveyPrompt.razor]
