@@ -2,10 +2,10 @@
 {
     public partial class Index
     {
-        private AssetsTable assetsTable;
-        private LiabilitiesTable liabilitiesTable;
+        private AssetsTable? assetsTable;
+        private LiabilitiesTable? liabilitiesTable;
 
-        private double netWorth { get; set; }
+        private double? netWorth { get; set; }
 
 
         private void ShowNetWorth()
