@@ -81,3 +81,27 @@ a, .btn-link {
     .table tr:last-child {
         border-bottom: none;
     }
+.mc-theme-new-blue{
+background : #003B97 !important;
+color:#fff !important;
+}
+.residential-purple {
+    background:#B000D5 ;
+    color: white;
+}
+.long-term {
+    background : #06B4E3;
+    color: white;
+}
+.text-color{
+    color : #0074a1
+}
+.button-style{
+    background : #0074a1;
+    color : white;
+    border-radius: 8px;
+}
+.table-text {
+    font-family: sans-serif;
+
+}

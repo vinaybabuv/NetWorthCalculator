@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Qhgn1WrOQaE31Nmfdv1c5mEa+o/P0D7n5eon7VOYGdM=",
+  "Hash": "XQbHwgEcrtNNQ5ayyO7zGuweoFHYIDOuV7fzHNfP7zs=",
   "Source": "NetWorthCalculator",
   "BasePath": "_content/NetWorthCalculator",
   "Mode": "Default",
@@ -270,6 +270,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\vinay\\source\\repos\\NetWorthCalculator\\NetWorthCalculator\\wwwroot\\images\\logo-medium.png",
+      "SourceId": "NetWorthCalculator",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vinay\\source\\repos\\NetWorthCalculator\\NetWorthCalculator\\wwwroot\\",
+      "BasePath": "_content/NetWorthCalculator",
+      "RelativePath": "images/logo-medium.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo-medium.png"
+    },
+    {
+      "Identity": "C:\\Users\\vinay\\source\\repos\\NetWorthCalculator\\NetWorthCalculator\\wwwroot\\images\\logo-small.png",
+      "SourceId": "NetWorthCalculator",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vinay\\source\\repos\\NetWorthCalculator\\NetWorthCalculator\\wwwroot\\",
+      "BasePath": "_content/NetWorthCalculator",
+      "RelativePath": "images/logo-small.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo-small.png"
     }
   ]
 }

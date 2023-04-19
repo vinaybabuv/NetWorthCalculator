@@ -9,3 +9,7 @@
 *.dll
 *.dll
 *.sentinel
+*.dll
+*.pdb
+*.json
+*.sentinel
